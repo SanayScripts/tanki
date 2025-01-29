@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWII Tank Facts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <style>
+        /* style.css content here */
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f1f8e9; /* Material You Pastel Green (Light) */
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            color: #388e3c; /* Material You Pastel Green (Dark) */
+            margin-bottom: 20px;
+        }
+
+        #fact-display {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px dashed #aed581; /* Material You Pastel Green (Medium) */
+            border-radius: 5px;
+            min-height: 4em; /* Ensure consistent height */
+        }
+
+        #generate-fact {
+            background-color: #4caf50; /* Material You Green */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #generate-fact:hover {
+            background-color: #43a047; /* Darker Green on Hover */
+        }
+
+        .material-symbols-outlined {
+            vertical-align: middle; 
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">WWII Tank Facts</h1>
+        <div id="fact-display">Click the button for a fact!</div>
+        <button id="generate-fact">
+            <span class="material-symbols-outlined">
+                tank
+            </span>
+            Next Fact
+        </button>
+    </div>
+
+    <script>
+        // script.js content here 
+        const facts = [
+            "The German Panzer IV, initially designed as a support tank, became a mainstay and saw numerous upgrades throughout the war.",
+            "The Soviet T-34 was renowned for its sloped armor, which increased its effective thickness and deflection capabilities.",
+            "The American M4 Sherman, while less heavily armed and armored than some counterparts, was praised for its reliability and ease of maintenance.",
+            "The British Churchill tank, with its heavy armor and good cross-country performance, excelled in infantry support roles.",
+            "The Tiger I, a German heavy tank, instilled fear in Allied crews with its powerful 88mm gun and thick armor.",
+            "Tank destroyers, such as the German Jagdpanther and the American M18 Hellcat, were designed specifically to combat enemy tanks.",
+            "The Battle of Kursk in 1943 was the largest tank battle in history, involving thousands of tanks from both sides.",
+            "Tanks played a crucial role in amphibious landings, with specialized amphibious tanks like the Sherman DD used in operations like D-Day.",
+            "The use of tanks revolutionized warfare, emphasizing mobility, firepower, and combined arms operations.",
+            "World War II witnessed a constant technological arms race in tank design, with each side striving for superiority in armor, firepower, and mobility."
+        ];
+
+        const factDisplay = document.getElementById("fact-display");
+        const generateFactButton = document.getElementById("generate-fact");
+
+        generateFactButton.addEventListener("click", () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factDisplay.textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
